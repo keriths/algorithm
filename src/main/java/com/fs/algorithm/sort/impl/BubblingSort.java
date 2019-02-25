@@ -1,11 +1,13 @@
-package com.fs.algorithm.sort;
+package com.fs.algorithm.sort.impl;
+
+import com.fs.algorithm.sort.Sort;
 
 import java.util.List;
 
 /**
  * 冒泡排序
  */
-public class BubblingSort implements Sort<Integer>{
+public class BubblingSort implements Sort<Integer> {
     @Override
     public List<Integer> sort(List<Integer> arrays) {
         if (arrays==null || arrays.size()<=1){

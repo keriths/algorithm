@@ -1,4 +1,6 @@
-package com.fs.algorithm.sort;
+package com.fs.algorithm.sort.impl;
+
+import com.fs.algorithm.sort.Sort;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -7,7 +9,7 @@ import java.util.List;
  * 快排 - 找基准值，把小的放基准值右边，大的放基准值左边，然后再对左右进行同样的方法排序，值到只有一个元素结束
  * Created by fanshuai on 19/2/25.
  */
-public class Quicksort implements Sort<Integer>{
+public class Quicksort implements Sort<Integer> {
     @Override
     public List<Integer> sort(List<Integer> arrays) {
         if (arrays==null || arrays.size()<=1){

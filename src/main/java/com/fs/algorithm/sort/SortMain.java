@@ -1,5 +1,8 @@
 package com.fs.algorithm.sort;
 
+import com.fs.algorithm.sort.impl.BubblingSort;
+import com.fs.algorithm.sort.impl.Quicksort;
+
 import java.util.ArrayList;
 import java.util.List;
 
