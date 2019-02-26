@@ -4,6 +4,9 @@ import com.fs.algorithm.sort.Sort;
 
 import java.util.List;
 
+/**
+ * 堆排序 小根堆升序  大根堆降序
+ */
 public class HeapSort implements Sort<Integer>{
 
     @Override
@@ -27,17 +30,17 @@ public class HeapSort implements Sort<Integer>{
             int leftVal = arrays.get(leftPos);
             if (rightPos >= arrays.size()) {
                 //没有右子节点
-                if (leftVal > curVal) {
+                if (leftVal < curVal) {
                     arrays.set(curPos, leftVal);
                     arrays.set(leftPos, curVal);
                 }
             } else {
                 int rightVal = arrays.get(rightPos);
-                if (curVal < leftVal || curVal < rightVal) {
-                    if (leftVal > rightVal) {
+                if (curVal > leftVal || curVal > rightVal) {
+                    if (leftVal < rightVal) {
                         arrays.set(curPos, leftVal);
                         arrays.set(leftPos, curVal);
-                    } else if (rightVal > leftVal) {
+                    } else if (rightVal < leftVal) {
                         arrays.set(curPos, rightVal);
                         arrays.set(rightPos, curVal);
                     } else {
