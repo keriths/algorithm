@@ -40,10 +40,10 @@ public class Quicksort implements Sort<Integer> {
 
         List<Integer> leftList = sort(ll);
         List<Integer> rightList = sort(rr);
-        ArrayList a = new ArrayList();
-        a.addAll(leftList);
-        a.add(stand);
-        a.addAll(rightList);
-        return a;
+//        ArrayList a = new ArrayList();
+//        a.addAll(leftList);
+//        a.add(stand);
+//        a.addAll(rightList);
+        return arrays;
     }
 }
