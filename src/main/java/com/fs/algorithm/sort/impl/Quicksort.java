@@ -38,8 +38,8 @@ public class Quicksort implements Sort<Integer> {
         List<Integer> ll = arrays.subList(0,standIndex);
         List<Integer> rr = arrays.subList(standIndex+1,arrays.size());
 
-        List<Integer> leftList = sort(ll);
-        List<Integer> rightList = sort(rr);
+//        List<Integer> leftList = sort(ll);
+//        List<Integer> rightList = sort(rr);
 //        ArrayList a = new ArrayList();
 //        a.addAll(leftList);
 //        a.add(stand);
