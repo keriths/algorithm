@@ -31,7 +31,7 @@ public class Bintree {
         return this;
     }
     public void addNode(Node root,Node addNode){
-        if (addNode.value<=root.value){
+        if (addNode.value<root.value){
             if (root.left==null){
                 root.left = addNode;
                 addNode.pre=root;
@@ -45,30 +45,29 @@ public class Bintree {
             }else {
                 addNode(root.right,addNode);
             }
+        }else {
+            throw new RuntimeException(addNode.value+"已经包含了");
         }
     }
 
-    public List<Node> search(Integer value){
+    public Node search(Integer value){
         if (root==null){
             return null;
         }
         List<Node> nodes = new ArrayList<Node>();
-        return search(root,value,nodes);
+        return search(root,value);
     }
-    public List<Node> search(Node root,Integer value,List<Node> nodes){
+    public Node search(Node root,Integer value){
         if (root==null){
             return null;
         }
-        if (root.value==value){
-            nodes.add(root);
+        if (root.value.intValue()==value.intValue()){
+            return root;
+        }else if (value<root.value){
+            return search(root.left,value);
+        }else {
+            return search(root.right,value);
         }
-        if (root.left!=null){
-            search(root.left,value,nodes);
-        }
-        if (root.right!=null){
-            search(root.right,value,nodes);
-        }
-        return nodes;
     }
 
 
@@ -78,15 +77,15 @@ public class Bintree {
         bintree.addNode(1);
         bintree.addNode(2);
         bintree.addNode(5);
-        bintree.addNode(3);
+//        bintree.addNode(3);
         bintree.addNode(8);
         bintree.addNode(30);
         bintree.addNode(23);
         bintree.addNode(7);
         bintree.addNode(3);
-        bintree.addNode(8);
+//        bintree.addNode(8);
 
-        List<Node> nodes = bintree.search(3);
+        Node nodes = bintree.search(3);
         System.out.println(nodes);
     }
 
