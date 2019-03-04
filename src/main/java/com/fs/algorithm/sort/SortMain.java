@@ -2,6 +2,7 @@ package com.fs.algorithm.sort;
 
 import com.fs.algorithm.sort.impl.BubblingSort;
 import com.fs.algorithm.sort.impl.HeapSort;
+import com.fs.algorithm.sort.impl.HeapSort2;
 import com.fs.algorithm.sort.impl.Quicksort;
 
 import java.util.ArrayList;
@@ -26,7 +27,7 @@ public class SortMain {
         System.out.println(arrays);
         System.out.println(new BubblingSort().sort((List)arrays.clone()));
         System.out.println(new Quicksort().sort((List)arrays.clone()));
-        System.out.println(new HeapSort().sort((List)arrays.clone()));
+        System.out.println(new HeapSort2().sort((List)arrays.clone()));
 
     }
 }
