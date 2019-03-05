@@ -18,7 +18,10 @@ public class HeapSort2 implements Sort<Integer>{
         initBigHeap(arrays);
         //最后一个父节点
         for (int i = 0;i<arrays.size()-1;i++){
-            initBigHeap(arrays.subList(0,arrays.size()-i-1));
+            int fitstValue = arrays.get(0);
+            arrays.set(0,arrays.get(arrays.size()-i-1));
+            arrays.set(arrays.size()-i-1,fitstValue);
+            bigChildUpdate(arrays.subList(0,arrays.size()-i-1),0);
         }
         return arrays;
     }
@@ -31,7 +34,7 @@ public class HeapSort2 implements Sort<Integer>{
             int leftVal = arrays.get(leftPos);
             if (rightPos >= arrays.size()) {
                 //没有右子节点
-                if (leftVal < curVal) {
+                if (leftVal > curVal) {
                     arrays.set(curPos, leftVal);
                     arrays.set(leftPos, curVal);
                 }
@@ -74,10 +77,14 @@ public class HeapSort2 implements Sort<Integer>{
                     arrays.set(index, leftValue);
                     arrays.set(leftPos, curValue);
                     bigChildUpdate(arrays,leftPos);
-                } else if (rightValue > leftPos) {
+                } else if (rightValue > leftValue) {
                     arrays.set(index, rightValue);
                     arrays.set(rightPos, curValue);
                     bigChildUpdate(arrays,rightPos);
+                }else {
+                    arrays.set(index, leftValue);
+                    arrays.set(leftPos, curValue);
+                    bigChildUpdate(arrays,leftPos);
                 }
             }else {
                 return;
