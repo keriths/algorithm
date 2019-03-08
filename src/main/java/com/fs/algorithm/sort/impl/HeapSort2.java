@@ -49,6 +49,10 @@ public class HeapSort2 implements Sort<Integer>{
                         arrays.set(curPos, rightVal);
                         arrays.set(rightPos, curVal);
                         bigChildUpdate(arrays,rightPos);
+                    }else {
+                        arrays.set(curPos, leftVal);
+                        arrays.set(leftPos, curVal);
+                        bigChildUpdate(arrays,leftPos);
                     }
                 }
             }

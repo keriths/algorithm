@@ -5,7 +5,7 @@ import com.fs.algorithm.sort.Sort;
 import java.util.List;
 
 /**
- * 堆排序 小根堆升序  大根堆降序
+ * 堆排序 小根堆升序  大根堆降序  这里的堆排序是不对的，用了堆排的原理，但不是大根堆，性能差
  */
 public class HeapSort implements Sort<Integer>{
 

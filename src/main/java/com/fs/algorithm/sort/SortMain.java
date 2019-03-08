@@ -15,24 +15,29 @@ import java.util.Random;
 public class SortMain {
     public static void main(String[] args){
         ArrayList arrays = new ArrayList();
-        for (int i = 0;i<1000000;i++){
-            arrays.add(new Random().nextInt(100000));
+        for (int i = 0;i<20;i++){
+            arrays.add(new Random().nextInt(5));
         }
         long t = System.currentTimeMillis();
         System.out.println("原始 "+arrays);
         System.out.println(System.currentTimeMillis() - t);
         t = System.currentTimeMillis();
-        System.out.println("Quicksort ");
-        new Quicksort().sort((List)arrays.clone());
-        System.out.println(System.currentTimeMillis() - t);
+        List<Integer> QuicksortList = new Quicksort().sort((List)arrays.clone());
+        System.out.println(QuicksortList);
+        System.out.println("Quicksort "+(System.currentTimeMillis() - t));
+
         t = System.currentTimeMillis();
-        System.out.println("HeapSort2 ");
-        new HeapSort2().sort((List)arrays.clone());
-        System.out.println(System.currentTimeMillis() - t);
+        List<Integer> HeapSort2List = new HeapSort2().sort((List)arrays.clone());
+        //System.out.println(HeapSort2List);
+        HeapSort2List = new HeapSort2().sort((List)arrays.clone());
+        System.out.println(HeapSort2List);
+        System.out.println("HeapSort2 "+(System.currentTimeMillis() - t));
+
         t = System.currentTimeMillis();
         System.out.println("BubblingSort "+new BubblingSort().sort((List)arrays.clone()));
         System.out.println(System.currentTimeMillis() - t);
         t = System.currentTimeMillis();
+
         System.out.println("HeapSort "+new HeapSort().sort((List)arrays.clone()));
         System.out.println(System.currentTimeMillis() - t);
         t = System.currentTimeMillis();
